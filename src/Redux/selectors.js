@@ -8,7 +8,7 @@ export const selectIsLoading = state => state.contacts.isLoading;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
-    return contacts?.filter( // why it should be conditional
+    return contacts.filter( // why it should be conditional
         contact =>
           contact.name.toLowerCase().includes(filter.toLowerCase()) ||
           contact.phone.includes(filter)
